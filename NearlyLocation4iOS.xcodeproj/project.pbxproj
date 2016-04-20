@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5E32E93D1CC71D1B00AD05E4 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 5E32E93C1CC71D1B00AD05E4 /* README.md */; };
 		5E32E9411CC71F1500AD05E4 /* NLShowLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E32E9401CC71F1500AD05E4 /* NLShowLocationViewController.m */; };
+		5E32E9441CC7794100AD05E4 /* NLShowLocationTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E32E9431CC7794100AD05E4 /* NLShowLocationTableViewController.m */; };
 		5EAF98B81CC719E7009B9C59 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF98B71CC719E7009B9C59 /* main.m */; };
 		5EAF98BB1CC719E7009B9C59 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF98BA1CC719E7009B9C59 /* AppDelegate.m */; };
 		5EAF98BE1CC719E7009B9C59 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF98BD1CC719E7009B9C59 /* ViewController.m */; };
@@ -23,6 +24,8 @@
 		5E32E93E1CC71DF000AD05E4 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		5E32E93F1CC71F1500AD05E4 /* NLShowLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLShowLocationViewController.h; sourceTree = "<group>"; };
 		5E32E9401CC71F1500AD05E4 /* NLShowLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLShowLocationViewController.m; sourceTree = "<group>"; };
+		5E32E9421CC7794100AD05E4 /* NLShowLocationTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLShowLocationTableViewController.h; sourceTree = "<group>"; };
+		5E32E9431CC7794100AD05E4 /* NLShowLocationTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLShowLocationTableViewController.m; sourceTree = "<group>"; };
 		5EAF98B31CC719E7009B9C59 /* NearlyLocation4iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NearlyLocation4iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EAF98B71CC719E7009B9C59 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5EAF98B91CC719E7009B9C59 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -86,6 +89,8 @@
 				5EAF98BD1CC719E7009B9C59 /* ViewController.m */,
 				5E32E93F1CC71F1500AD05E4 /* NLShowLocationViewController.h */,
 				5E32E9401CC71F1500AD05E4 /* NLShowLocationViewController.m */,
+				5E32E9421CC7794100AD05E4 /* NLShowLocationTableViewController.h */,
+				5E32E9431CC7794100AD05E4 /* NLShowLocationTableViewController.m */,
 				5EAF98BF1CC719E7009B9C59 /* Main.storyboard */,
 				5EAF98C21CC719E7009B9C59 /* Assets.xcassets */,
 				5EAF98C41CC719E7009B9C59 /* LaunchScreen.storyboard */,
@@ -239,6 +244,7 @@
 				5E32E93D1CC71D1B00AD05E4 /* README.md in Sources */,
 				5E32E9411CC71F1500AD05E4 /* NLShowLocationViewController.m in Sources */,
 				5EAF98B81CC719E7009B9C59 /* main.m in Sources */,
+				5E32E9441CC7794100AD05E4 /* NLShowLocationTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

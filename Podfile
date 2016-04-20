@@ -5,5 +5,7 @@ target 'NearlyLocation4iOS' do
 
     pod 'AMapLocation'
     pod 'AMapSearch' #搜索服务SDK
+    
+    pod 'MJRefresh'
 
 end
