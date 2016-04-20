@@ -11,4 +11,9 @@
 #import <AMapSearchKit/AMapSearchKit.h>
 
 @interface NLShowLocationViewController : UIViewController <AMapLocationManagerDelegate, AMapSearchDelegate>
+
+
+@property (weak, nonatomic) IBOutlet UITextField *searchTextField;
+
+
 @end

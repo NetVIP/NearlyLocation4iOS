@@ -15,6 +15,7 @@
 
 @property (nonatomic, strong) AMapLocationManager *locationManager;
 @property (nonatomic) int page;
+@property (nonatomic) int search_page;
 
 @end
 
@@ -23,6 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.page = 0;
+    self.search_page = 0;
     
     //初始化检索对象
     _search = [[AMapSearchAPI alloc] init];
@@ -30,6 +32,7 @@
     
     //构造AMapPOIAroundSearchRequest对象，设置周边请求参数
     request = [[AMapPOIAroundSearchRequest alloc] init];
+    request.keywords = nil;
 //    request.keywords = @"方恒";
     // types属性表示限定搜索POI的类别，默认为：餐饮服务|商务住宅|生活服务
     // POI的类型共分为20种大类别，分别为：
@@ -134,6 +137,15 @@
     }
     request.page = self.page;
     [_search AMapPOIAroundSearch: request];
+}
+
+- (IBAction)searchClick:(id)sender {
+    self.search_page = 0;
+    
+    request.page = self.search_page;
+    request.keywords = self.searchTextField.text;
+    [_search AMapPOIAroundSearch: request];
+    [self.searchTextField resignFirstResponder];
 }
 
 /*
