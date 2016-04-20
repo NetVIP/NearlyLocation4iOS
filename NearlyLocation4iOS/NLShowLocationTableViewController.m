@@ -23,7 +23,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //初始化检索对象
+    self.searchBar.delegate = self;
     _search = [[AMapSearchAPI alloc] init];
     _search.delegate = self;
     self.page = 1;
@@ -39,11 +39,11 @@
 }
 
 - (void)loadNewData {
+    self.searchBar.text = @"";
     [self.locationArray removeAllObjects];
     [self.tableView reloadData];
     self.page = 1;
-    request.page = self.page;
-    [_search AMapPOIAroundSearch: request];
+    [self sendRequest];
 }
 
 - (void)loadMoreData {
@@ -70,9 +70,17 @@
         for (AMapPOI *p in response.pois) {
             [self.locationArray addObject:p];
         }
+    } else {
+        UIAlertView *alertview = [[UIAlertView alloc] initWithTitle:@"失败" message:@"没数据" delegate:self cancelButtonTitle:nil otherButtonTitles:@"哦", nil];
+        [alertview show];
     }
     [self.tableView reloadData];
     [self stopLoadingView];
+}
+
+- (IBAction)reloadLocation:(id)sender {
+    self.page = 1;
+    [self sendRequest];
 }
 
 - (void) sendRequest {
@@ -84,7 +92,7 @@
     // 汽车服务|汽车销售|汽车维修|摩托车服务|餐饮服务|购物服务|生活服务|体育休闲服务|
     // 医疗保健服务|住宿服务|风景名胜|商务住宅|政府机构及社会团体|科教文化服务|
     // 交通设施服务|金融保险服务|公司企业|道路附属设施|地名地址信息|公共设施
-    request.types = @"地名地址信息|体育休闲服务|科教文化服务|公共设施";
+    request.types = @"地名地址信息|体育休闲服务|科教文化服务";
     request.sortrule = 0;
     request.requireExtension = YES;
     request.page = self.page;
@@ -102,16 +110,34 @@
         if (error)
         {
             NSLog(@"locError:{%ld - %@};", (long)error.code, error.localizedDescription);
+            UIAlertView *alertview = [[UIAlertView alloc] initWithTitle:@"失败" message:@"获取位置失败，试试右上角的“刷新位置”？" delegate:self cancelButtonTitle:nil otherButtonTitles:@"哦", nil];
+            [alertview show];
         }
-        NSLog(@"location:%@", location);
-        if (regeocode)
-        {
-            NSLog(@"reGeocode:%@", regeocode);
-        }
+        AMapPOI *p = [[AMapPOI alloc] init];
+        p.name = [NSString stringWithFormat:@"%@%@", regeocode.city == nil ? @"" : regeocode.city, regeocode.district == nil ? @"" : regeocode.district];
+        p.address = regeocode.province;
+        [self.locationArray addObject:p];
+        [self.tableView reloadData];
         CLLocationCoordinate2D coor = location.coordinate;
         request.location = [AMapGeoPoint locationWithLatitude:coor.latitude longitude:coor.longitude];
         [_search AMapPOIAroundSearch: request];
     }];
+}
+
+#pragma mark - Search Bar
+
+//点击键盘上的search按钮时调用
+
+- (void) searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    [self.locationArray removeAllObjects];
+    [self.tableView reloadData];
+    NSString *searchTerm = searchBar.text;
+    request.keywords = searchTerm;
+    self.page = 1;
+    request.page = self.page;
+    [_search AMapPOIAroundSearch: request];
+    [self.searchBar resignFirstResponder];
 }
 
 #pragma mark - Table view data source

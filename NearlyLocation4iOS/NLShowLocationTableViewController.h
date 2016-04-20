@@ -12,6 +12,8 @@
 #import <AMapLocationKit/AMapLocationKit.h>
 #import <AMapSearchKit/AMapSearchKit.h>
 
-@interface NLShowLocationTableViewController : UITableViewController <AMapLocationManagerDelegate, AMapSearchDelegate>
+@interface NLShowLocationTableViewController : UITableViewController <AMapLocationManagerDelegate, AMapSearchDelegate, UISearchBarDelegate>
+
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 
 @end

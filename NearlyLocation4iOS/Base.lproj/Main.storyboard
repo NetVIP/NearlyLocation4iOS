@@ -226,7 +226,16 @@
                             <outlet property="delegate" destination="OmU-n6-Bxo" id="289-v7-Yyi"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="XOM-X0-EfW"/>
+                    <navigationItem key="navigationItem" id="XOM-X0-EfW">
+                        <barButtonItem key="rightBarButtonItem" title="刷新位置" id="pVf-7C-iOL">
+                            <connections>
+                                <action selector="reloadLocation:" destination="OmU-n6-Bxo" id="z7O-29-nxX"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="searchBar" destination="Bor-dQ-bSY" id="lRy-Pj-gDx"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JAX-AJ-Ipq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
