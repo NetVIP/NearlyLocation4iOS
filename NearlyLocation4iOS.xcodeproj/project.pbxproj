@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E32E93D1CC71D1B00AD05E4 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 5E32E93C1CC71D1B00AD05E4 /* README.md */; };
 		5EAF98B81CC719E7009B9C59 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF98B71CC719E7009B9C59 /* main.m */; };
 		5EAF98BB1CC719E7009B9C59 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF98BA1CC719E7009B9C59 /* AppDelegate.m */; };
 		5EAF98BE1CC719E7009B9C59 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF98BD1CC719E7009B9C59 /* ViewController.m */; };
@@ -17,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5E32E93C1CC71D1B00AD05E4 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		5E32E93E1CC71DF000AD05E4 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		5EAF98B31CC719E7009B9C59 /* NearlyLocation4iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NearlyLocation4iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EAF98B71CC719E7009B9C59 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5EAF98B91CC719E7009B9C59 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -55,6 +58,7 @@
 		5EAF98AA1CC719E7009B9C59 = {
 			isa = PBXGroup;
 			children = (
+				5E32E93C1CC71D1B00AD05E4 /* README.md */,
 				5EAF98B51CC719E7009B9C59 /* NearlyLocation4iOS */,
 				5EAF98B41CC719E7009B9C59 /* Products */,
 				F47325D00CF22E3F4D4A5F02 /* Pods */,
@@ -90,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				5EAF98B71CC719E7009B9C59 /* main.m */,
+				5E32E93E1CC71DF000AD05E4 /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -226,6 +231,7 @@
 			files = (
 				5EAF98BE1CC719E7009B9C59 /* ViewController.m in Sources */,
 				5EAF98BB1CC719E7009B9C59 /* AppDelegate.m in Sources */,
+				5E32E93D1CC71D1B00AD05E4 /* README.md in Sources */,
 				5EAF98B81CC719E7009B9C59 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -53,3 +53,4 @@ fastlane/report.xml
 fastlane/screenshots
 Podfile.lock
 Pods
+PrefixHeader.pch
