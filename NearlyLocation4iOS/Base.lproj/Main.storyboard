@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,91 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NeP-lM-140">
+                                <rect key="frame" x="231" y="285" width="139" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="139" id="8gx-Rh-R2a"/>
+                                    <constraint firstAttribute="height" constant="30" id="99U-ag-2L1"/>
+                                </constraints>
+                                <state key="normal" title="点击开始"/>
+                                <connections>
+                                    <segue destination="w18-kc-OSM" kind="modal" id="qKx-XF-B1n"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="NeP-lM-140" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Kcq-sX-CUN"/>
+                            <constraint firstItem="NeP-lM-140" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="z6F-sO-VD8"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="340" y="389"/>
+        </scene>
+        <!--Show Location View Controller-->
+        <scene sceneID="hFk-sB-imf">
+            <objects>
+                <viewController id="w18-kc-OSM" customClass="NLShowLocationViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="msm-m2-BNM"/>
+                        <viewControllerLayoutGuide type="bottom" id="nki-fN-S13"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UCC-vx-VDe">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dlz-Vm-tmt">
+                                <rect key="frame" x="20" y="20" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Kib-vq-rW7"/>
+                                    <constraint firstAttribute="width" constant="46" id="VYE-GT-IhI"/>
+                                </constraints>
+                                <state key="normal" title="返回"/>
+                                <connections>
+                                    <action selector="close:" destination="w18-kc-OSM" eventType="touchUpInside" id="K97-5D-bFq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z6r-JF-eva">
+                                <rect key="frame" x="534" y="20" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="GsX-39-Rn8"/>
+                                    <constraint firstAttribute="width" constant="46" id="gjE-eK-IN8"/>
+                                </constraints>
+                                <state key="normal" title="刷新"/>
+                                <connections>
+                                    <action selector="refreshLocation:" destination="w18-kc-OSM" eventType="touchUpInside" id="94C-fi-RXJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W6U-Sd-0nk">
+                                <rect key="frame" x="505" y="562" width="75" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Cj7-Uk-4Uz"/>
+                                    <constraint firstAttribute="width" constant="75" id="QzE-6i-Tbx"/>
+                                </constraints>
+                                <state key="normal" title="载入更多"/>
+                                <connections>
+                                    <action selector="loadMoreSearch:" destination="w18-kc-OSM" eventType="touchUpInside" id="pkE-n4-ZXY"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="W6U-Sd-0nk" firstAttribute="trailing" secondItem="UCC-vx-VDe" secondAttribute="trailingMargin" id="5vt-mc-icX"/>
+                            <constraint firstItem="nki-fN-S13" firstAttribute="top" secondItem="W6U-Sd-0nk" secondAttribute="bottom" constant="8" id="Acv-FE-go7"/>
+                            <constraint firstItem="dlz-Vm-tmt" firstAttribute="leading" secondItem="UCC-vx-VDe" secondAttribute="leadingMargin" id="C0K-eV-AYD"/>
+                            <constraint firstItem="dlz-Vm-tmt" firstAttribute="top" secondItem="msm-m2-BNM" secondAttribute="bottom" id="m7y-s4-VMg"/>
+                            <constraint firstItem="z6r-JF-eva" firstAttribute="trailing" secondItem="UCC-vx-VDe" secondAttribute="trailingMargin" id="nPG-Cp-QeP"/>
+                            <constraint firstItem="z6r-JF-eva" firstAttribute="top" secondItem="msm-m2-BNM" secondAttribute="bottom" id="zAg-RL-pZ6"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="PhK-rw-bHz"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sxR-TB-aHc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1019" y="389"/>
         </scene>
     </scenes>
 </document>

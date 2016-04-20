@@ -1,5 +1,5 @@
 //
-//  AppDelegate.h
+//  NLShowLocationViewController.h
 //  NearlyLocation4iOS
 //
 //  Created by Luna Gao on 16/4/20.
@@ -10,10 +10,5 @@
 #import <AMapLocationKit/AMapLocationKit.h>
 #import <AMapSearchKit/AMapSearchKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
-
-@property (strong, nonatomic) UIWindow *window;
-
-
+@interface NLShowLocationViewController : UIViewController <AMapLocationManagerDelegate, AMapSearchDelegate>
 @end
-
